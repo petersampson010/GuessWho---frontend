@@ -8,6 +8,29 @@ import QuestionSection from './QuestionSection'
 
 export default class App extends React.Component {
 
+  state = {
+    aliens: [
+      {
+        name: "Albert",
+        colour: "green",
+        numberEyes: 3,
+        hat: true,
+        ears: false,
+        horns: true, 
+        hair: true
+      },
+      {
+        name: "Zed",
+        colour: "yellow",
+        numberEyes: 1,
+        hat: true,
+        ears: false,
+        horns: true, 
+        hair: true
+      }
+    ]
+  }
+
   fetchAliens = () => {
     fetch()
   }
@@ -18,7 +41,7 @@ export default class App extends React.Component {
       <div className="App">
         <TitleBar />
         <MenuBar />
-        <Game />
+        <Game aliens={this.state.aliens}/>
         <QuestionSection />
       </div>
     )

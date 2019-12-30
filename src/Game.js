@@ -8,7 +8,7 @@ export default class Game extends React.Component {
         return (
             <div className='game'>
                 <CompSide />
-                <UsersSide />
+                <UsersSide aliens={this.props.aliens}/>
             </div>
         )
     }
