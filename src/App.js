@@ -5,12 +5,24 @@ import MenuBar from './MenuBar'
 import TitleBar from './TitleBar'
 import Game from './Game'
 import QuestionSection from './QuestionSection'
+import ColourModal from './ColourModal'
 
 export default class App extends React.Component {
 
   state = {
     aliens: [],
-    et: null
+    et: null,
+    modals: {
+      colour: false,
+      number_of_eyes: false,
+      hat: false,
+      ears: false,
+      horns: false,
+      hair: false,
+      fin: false,
+      nose: false,
+      eyebrows: false
+    }
   }
 
   fetchAliens = () => {
@@ -29,8 +41,7 @@ export default class App extends React.Component {
   }
 
   colourClick = () => {
-    present modal 
-    
+    this.setState({ modals: {...this.state.modals, colour: true }} )
   }
 
   render() {
@@ -39,7 +50,7 @@ export default class App extends React.Component {
         <TitleBar />
         <MenuBar />
         <Game aliens={this.state.aliens}/>
-        <QuestionSection setEt={this.setEt}/>
+        <QuestionSection modals={this.state.modals} setEt={this.setEt} colourClick={this.colourClick} />
       </div>
     )
   }

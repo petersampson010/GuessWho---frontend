@@ -8,7 +8,7 @@ export default class QuestionSection extends React.Component {
         return (
             <div className='questionsection'>
                 <AlienSelect setEt={this.props.setEt}/>
-                <Questions />
+                <Questions modals={this.props.modals} colourClick={this.props.colourClick}/>
             </div>
         )
     }
