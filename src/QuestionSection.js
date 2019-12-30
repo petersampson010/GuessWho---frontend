@@ -7,7 +7,7 @@ export default class QuestionSection extends React.Component {
     render() {
         return (
             <div className='questionsection'>
-                <AlienSelect />
+                <AlienSelect setEt={this.props.setEt}/>
                 <Questions />
             </div>
         )

@@ -9,32 +9,29 @@ import QuestionSection from './QuestionSection'
 export default class App extends React.Component {
 
   state = {
-    aliens: [
-      {
-        name: "Albert",
-        colour: "green",
-        numberEyes: 3,
-        hat: true,
-        ears: false,
-        horns: true, 
-        hair: true
-      },
-      {
-        name: "Zed",
-        colour: "yellow",
-        numberEyes: 1,
-        hat: true,
-        ears: false,
-        horns: true, 
-        hair: true
-      }
-    ]
+    aliens: [],
+    et: null
   }
 
   fetchAliens = () => {
-    fetch()
+    fetch('http://localhost:3000/characters')
+    .then(resp => resp.json())
+    .then(data => this.setState({aliens: data}))
   }
 
+  componentDidMount() {
+    this.fetchAliens()
+  }
+
+  setEt = () => {
+    const randAlien = this.state.aliens[Math.floor(Math.random()*24)];
+    this.setState({et: randAlien})
+  }
+
+  colourClick = () => {
+    present modal 
+    
+  }
 
   render() {
     return (
@@ -42,7 +39,7 @@ export default class App extends React.Component {
         <TitleBar />
         <MenuBar />
         <Game aliens={this.state.aliens}/>
-        <QuestionSection />
+        <QuestionSection setEt={this.setEt}/>
       </div>
     )
   }
