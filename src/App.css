@@ -1,38 +1,60 @@
-.App {
+.menubar {
+  height: 100%;
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: blue;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.titlebar {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: red;
+  overflow-x: hidden;
+  padding-top: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.game {
+  position: fixed;
+  top: 90px;
+  left: 150px;
+  right: 30px;
+  bottom: 30px;
+  background-color: brown;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.compside {
+  position: fixed;
+  top: 120px;
+  left: 170px;
+  right: 60px;
+  bottom: 480px;
+  background-color: yellow;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.usersside {
+  position: fixed;
+  top: 280px;
+  left: 170px;
+  right: 60px;
+  bottom: 60px;
+  background-color: green;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.questionsection {
+  position: fixed;
+  top: 600px;
+  left: 270px;
+  right: 160px;
+  bottom: 20px;
+  background-color: black;
 }
