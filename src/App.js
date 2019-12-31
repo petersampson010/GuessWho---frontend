@@ -9,7 +9,18 @@ export default class App extends React.Component {
 
   state = {
     aliens: [],
-    et: null,
+    et: {
+      name: null,
+      colour: false,
+      number_of_eyes: false,
+      hat: false,
+      ears: false,
+      horns: false,
+      hair: false,
+      fin: false,
+      nose: false,
+      eyebrows: false
+    },
     modals: {
       any: false,
       colour: false,
@@ -22,7 +33,8 @@ export default class App extends React.Component {
       nose: false,
       eyebrows: false
     },
-    question: null
+    question: null, 
+    computer: "nothing"
   }
 
   fetchAliens = () => {
@@ -69,7 +81,13 @@ export default class App extends React.Component {
     event.preventDefault();
     this.setState({
       modals: {...this.state.modals, any: false, [attr]: false},
-      question: attr})
+      question: attr});
+      this.answer(attr)
+  }
+
+  answer = attr => {
+    console.log(this.state.et.attr)
+    // this.state.et.attr ? "YES" : "NO"
   }
 
   render() {
@@ -77,7 +95,7 @@ export default class App extends React.Component {
       <div className="App">
         <TitleBar />
         <MenuBar />
-        <Game aliens={this.state.aliens}/>
+        <Game computer={this.state.computer} aliens={this.state.aliens}/>
         <QuestionSection 
         modals={this.state.modals} 
         et={this.state.et}

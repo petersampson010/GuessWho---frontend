@@ -4,7 +4,9 @@ export default class CompSide extends React.Component {
 
     render() {
         return (
-            <div className='compside'></div>
+            <div className='compside'>
+                COMPUTER SAYS {this.props.computer}
+            </div>
         )
     }
 }

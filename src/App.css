@@ -39,6 +39,7 @@
   right: 60px;
   bottom: 680px;
   background-color: yellow;
+  text-align: center;
 }
 
 .usersside {
@@ -174,4 +175,6 @@
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
 }
+
+
 
