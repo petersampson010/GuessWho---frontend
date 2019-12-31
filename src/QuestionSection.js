@@ -11,15 +11,7 @@ export default class QuestionSection extends React.Component {
                 <Questions 
                 modals={this.props.modals} 
 
-                colourClick={this.props.colourClick}
-                eyesClick={this.props.eyesClick}
-                hatClick={this.props.hatClick}
-                earsClick={this.props.earsClick}
-                hornsClick={this.props.hornsClick}
-                hairClick={this.props.hairClick}
-                finClick={this.props.finClick}
-                noseClick={this.props.noseClick}
-                eyebrowsClick={this.props.eyebrowsClick}
+                attributeClick={this.props.attributeClick}
                 
                 submitColour={this.props.submitColour}
                 submitEyes={this.props.submitEyes}/>

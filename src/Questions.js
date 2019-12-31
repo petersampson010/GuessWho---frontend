@@ -22,15 +22,15 @@ export default class Questions extends React.Component {
             <div className='questions'>
                 QUESTIONS
                 <br></br>
-                {this.props.modals.colour ? <ColourModal submitColour={this.props.submitColour}/> : <button onClick={this.props.colourClick}>COLOUR</button>}
-                {this.props.modals.number_of_eyes ? <EyesModal submitEyes={this.props.submitEyes}/> : <button onClick={this.props.eyesClick}>NUMBER OF EYES</button>}
-                {this.props.modals.hat ? <HatModal /> : <button onClick={this.props.hatClick}>HAT</button>}
-                {this.props.modals.ears ? <EarsModal /> : <button onClick={this.props.earsClick}>EARS</button>}
-                {this.props.modals.horns ? <HornsModal /> : <button onClick={this.props.hornsClick}>HORNS</button>}
-                {this.props.modals.hair ? <HairModal /> : <button onClick={this.props.hairClick}>HAIR</button>}
-                {this.props.modals.fin ? <FinModal /> : <button onClick={this.props.finClick}>FIN</button>}
-                {this.props.modals.nose ? <NoseModal /> : <button onClick={this.props.noseClick}>NOSE</button>}
-                {this.props.modals.eyebrows ? <EyebrowsModal /> : <button onClick={this.props.eyebrowsClick}>EYEBROWS</button>}
+                {this.props.modals.colour ? <ColourModal submitColour={this.props.submitColour}/> : <button onClick={(e) => this.props.attributeClick("colour")}>COLOUR</button>}
+                {this.props.modals.number_of_eyes ? <EyesModal submitEyes={this.props.submitEyes}/> : <button onClick={(e) => this.props.attributeClick("number_of_eyes")}>NUMBER OF EYES</button>}
+                {this.props.modals.hat ? <HatModal /> : <button onClick={(e) => this.props.attributeClick("hat")}>HAT</button>}
+                {this.props.modals.ears ? <EarsModal /> : <button onClick={(e) => this.props.attributeClick("ears")}>EARS</button>}
+                {this.props.modals.horns ? <HornsModal /> : <button onClick={(e) => this.props.attributeClick("horns")}>HORNS</button>}
+                {this.props.modals.hair ? <HairModal /> : <button onClick={(e) => this.props.attributeClick("hair")}>HAIR</button>}
+                {this.props.modals.fin ? <FinModal /> : <button onClick={(e) => this.props.attributeClick("fin")}>FIN</button>}
+                {this.props.modals.nose ? <NoseModal /> : <button onClick={(e) => this.props.attributeClick("nose")}>NOSE</button>}
+                {this.props.modals.eyebrows ? <EyebrowsModal /> : <button onClick={(e) => this.props.attributeClick("eyebrows")}>EYEBROWS</button>}
                 <br></br>
                 <br></br>
                 <button className='glow-on-hover'>TAKE A GUESS</button>

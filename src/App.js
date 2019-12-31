@@ -42,32 +42,10 @@ export default class App extends React.Component {
     this.setState({et: randAlien})
   }
 
-  colourClick = () => {
-    this.setState({ modals: {...this.state.modals, colour: true }} )
-  }
-  eyesClick = () => {
-    this.setState({ modals: {...this.state.modals, number_of_eyes: true }} )
-  }
-  hatClick = () => {
-    this.setState({ modals: {...this.state.modals, hat: true }} )
-  }
-  earsClick = () => {
-    this.setState({ modals: {...this.state.modals, ears: true }} )
-  }
-  hornsClick = () => {
-    this.setState({ modals: {...this.state.modals, horns: true }} )
-  }
-  hairClick = () => {
-    this.setState({ modals: {...this.state.modals, hair: true }} )
-  }
-  finClick = () => {
-    this.setState({ modals: {...this.state.modals, fin: true }} )
-  }
-  noseClick = () => {
-    this.setState({ modals: {...this.state.modals, nose: true }} )
-  }
-  eyebrowsClick = () => {
-    this.setState({ modals: {...this.state.modals, eyebrows: true }} )
+  attributeClick = attr => {
+    this.setState({ 
+      modals: {...this.state.modals, [attr]: true}
+    })
   }
 
   submitColour = event => {
@@ -112,15 +90,7 @@ export default class App extends React.Component {
         modals={this.state.modals} 
         setEt={this.setEt} 
 
-        colourClick={this.colourClick} 
-        eyesClick={this.eyesClick}
-        hatClick={this.hatClick}
-        earsClick={this.earsClick}
-        hornsClick={this.hornsClick}
-        hairClick={this.hairClick}
-        finClick={this.finClick}
-        noseClick={this.noseClick}
-        eyebrowsClick={this.eyebrowsClick}
+        attributeClick={this.attributeClick}
         
         submitColour={this.submitColour}
         submitEyes={this.submitEyes}/>
