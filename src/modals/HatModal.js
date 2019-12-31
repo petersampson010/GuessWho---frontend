@@ -7,10 +7,9 @@ export default class HatModal extends React.Component {
         return (
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times;</span>
-                <form>
+                <form onSubmit={event => this.props.submitQuestion(event, "hat")}>
                     <p>Are they wearing a Hat?</p>
-                    <submit>ASK!</submit>
+                    <button type="submit">ASK!</button>
                 </form>
             </div>   
         </div>

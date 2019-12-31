@@ -11,6 +11,7 @@ export default class App extends React.Component {
     aliens: [],
     et: null,
     modals: {
+      any: false,
       colour: false,
       number_of_eyes: false,
       hat: false,
@@ -20,7 +21,8 @@ export default class App extends React.Component {
       fin: false,
       nose: false,
       eyebrows: false
-    }
+    },
+    question: null
   }
 
   fetchAliens = () => {
@@ -38,46 +40,36 @@ export default class App extends React.Component {
   }
 
   setEt = () => {
-    const randAlien = this.state.aliens[Math.floor(Math.random()*24)];
+    const randAlien = this.state.aliens[Math.floor(Math.random()*23)+1];
     this.setState({et: randAlien})
   }
 
   attributeClick = attr => {
     this.setState({ 
-      modals: {...this.state.modals, [attr]: true}
+      modals: {...this.state.modals, any: true, [attr]: true}
     })
   }
 
   submitColour = event => {
-    event.preventDefault()
-    const selectedColour = event.target.colours.value
-    console.log(selectedColour)
+    event.preventDefault();
+    const selectedColour = event.target.colours.value;
+    this.setState({
+      modals: {...this.state.modals, any: false, colour: false},
+      question: "colour"})
   }
   submitEyes = event => {
     event.preventDefault()
     const selectedEyes = event.target.eyes.value
-    console.log(selectedEyes)
+    this.setState({
+      modals: {...this.state.modals, any: false, number_of_eyes: false},
+      question: "number_of_eyes"})
   }
-  submitHat = event => {
-    event.preventDefault()
-  }
-  submitEars = event => {
-    event.preventDefault()
-  }
-  submitHorns = event => {
-    event.preventDefault()
-  }
-  submitHair = event => {
-    event.preventDefault()
-  }
-  submitFin = event => {
-    event.preventDefault()
-  }
-  submitNose = event => {
-    event.preventDefault()
-  }
-  submitEyebrows = event => {
-    event.preventDefault()
+
+  submitQuestion = (event, attr) => {
+    event.preventDefault();
+    this.setState({
+      modals: {...this.state.modals, any: false, [attr]: false},
+      question: attr})
   }
 
   render() {
@@ -88,12 +80,14 @@ export default class App extends React.Component {
         <Game aliens={this.state.aliens}/>
         <QuestionSection 
         modals={this.state.modals} 
+        et={this.state.et}
         setEt={this.setEt} 
 
         attributeClick={this.attributeClick}
         
         submitColour={this.submitColour}
-        submitEyes={this.submitEyes}/>
+        submitEyes={this.submitEyes}
+        submitQuestion={this.submitQuestion}/>
       </div>
     )
   }
