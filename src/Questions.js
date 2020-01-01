@@ -1,10 +1,4 @@
 import React from 'react'
-import QuestionButton from './QuestionButton'
-
-
-
-
-
 
 
 export default class Questions extends React.Component {

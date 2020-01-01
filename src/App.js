@@ -4,7 +4,6 @@ import MenuBar from './MenuBar'
 import TitleBar from './TitleBar'
 import Game from './Game'
 import QuestionSection from './QuestionSection'
-import GuessBackdrop from './GuessBackdrop'
 
 export default class App extends React.Component {
 
@@ -24,7 +23,9 @@ export default class App extends React.Component {
       eyebrows: false
     },
     computer: "nothing",
-    guess: false 
+    guess: false,
+    userguess: null,
+    result: ""
   }
 
   fetchAliens = () => {
@@ -78,8 +79,12 @@ export default class App extends React.Component {
     this.setState({guess: true});
   }
 
-  window.onClick = event => {
-    event.target 
+  submitGuess = event => {
+    event.preventDefault();
+    this.setState({guess: false, userguess: event.target.userguess.value});
+    this.state.et.name.toLowerCase() == event.target.userguess.value.toLowerCase() ? 
+    this.setState({result: "CONGRATULATIONS"})
+    : this.setState({result: "NOPE, TRY AGAIN!"})
   }
 
   render() {
@@ -87,7 +92,11 @@ export default class App extends React.Component {
       <div className="App">
           <TitleBar />
           <MenuBar />
-          <Game computer={this.state.computer} aliens={this.state.aliens}/>
+          <Game 
+          computer={this.state.computer} 
+          aliens={this.state.aliens}
+          userguess={this.state.userguess}
+          result={this.state.result}/>
           <QuestionSection 
           modals={this.state.modals} 
           et={this.state.et}
@@ -98,7 +107,10 @@ export default class App extends React.Component {
           submitColour={this.submitColour}
           submitEyes={this.submitEyes}
           submitQuestion={this.submitQuestion}
-          takeAGuess={this.takeAGuess}/>
+
+          takeAGuess={this.takeAGuess}
+          guess={this.state.guess}
+          submitGuess={this.submitGuess}/>
         </div>
     )
   }

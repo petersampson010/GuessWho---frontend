@@ -2,12 +2,17 @@ import React from 'react';
 import AlienSelect from './AlienSelect'
 import Questions from './Questions'
 import Modal from './modals/Modal'
+import Guess from './Guess'
 
 export default class QuestionSection extends React.Component {
 
     render() {
         return (
+            this.props.guess ? 
             <div className='questionsection'>
+                <Guess submitGuess={this.props.submitGuess}/>
+            </div>
+            : <div className='questionsection'>
                 <AlienSelect et={this.props.et} setEt={this.props.setEt}/>
                 {this.props.modals.any ? 
                 <Modal modals={this.props.modals} 
@@ -20,6 +25,7 @@ export default class QuestionSection extends React.Component {
                 submitEyes={this.props.submitEyes}
                 takeAGuess={this.props.takeAGuess}/>}
             </div>
+
         )
     }
 }
