@@ -10,10 +10,10 @@ export default class EyesModal extends React.Component {
                 <form onSubmit={event => this.props.submitEyes(event)}>
                     <p>Do they have
                         <select name="eyes">
-                        <option value="one">1</option>
-                        <option value="two">2</option>
-                        <option value="three">3</option>
-                        <option value="four">4</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                         <br></br>
                     </select>Eye(s)?</p>
                     <button type="submit">ASK!</button>

@@ -17,7 +17,8 @@ export default class QuestionSection extends React.Component {
                 : <Questions
                 attributeClick={this.props.attributeClick}     
                 submitColour={this.props.submitColour}
-                submitEyes={this.props.submitEyes}/>}
+                submitEyes={this.props.submitEyes}
+                takeAGuess={this.props.takeAGuess}/>}
             </div>
         )
     }

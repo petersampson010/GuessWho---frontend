@@ -25,7 +25,7 @@ export default class Questions extends React.Component {
                 <button onClick={(e) => this.props.attributeClick("eyebrows")}>EYEBROWS</button>
                 <br></br>
                 <br></br>
-                <button className='glow-on-hover'>TAKE A GUESS</button>
+                <button className='glow-on-hover' onClick={this.props.takeAGuess}>TAKE A GUESS</button>
             </div>
         )
     }
