@@ -54,7 +54,8 @@ export default class App extends React.Component {
     event.preventDefault();
     const selectedColour = event.target.colours.value;
     this.setState({
-      modals: {...this.state.modals, any: false, colour: false}
+      modals: {...this.state.modals, any: false, colour: false},
+      userguess: null
     });
     this.state.et.colour === selectedColour ? this.setState({computer: "YES"}) : this.setState({computer: "NO"})
   }
@@ -63,7 +64,8 @@ export default class App extends React.Component {
     event.preventDefault();
     const selectedEyes = event.target.eyes.value
     this.setState({
-      modals: {...this.state.modals, any: false, number_of_eyes: false}
+      modals: {...this.state.modals, any: false, number_of_eyes: false},
+      userguess: null
     });
     this.state.et.number_of_eyes === parseInt(selectedEyes) ? this.setState({computer: "YES"}) : this.setState({computer: "NO"})
   }
@@ -72,7 +74,8 @@ export default class App extends React.Component {
     event.preventDefault();
     const attrAsked = attr
     this.setState({
-      modals: {...this.state.modals, any: false, [attrAsked]: false}
+      modals: {...this.state.modals, any: false, [attrAsked]: false},
+      userguess: null
     });
     this.state.et[attrAsked] ? this.setState({computer: "YES"}) : this.setState({computer: "NO"})
   }
@@ -102,6 +105,7 @@ export default class App extends React.Component {
           modals={this.state.modals} 
           et={this.state.et}
           setEt={this.setEt} 
+          result={this.state.result}
 
           attributeClick={this.attributeClick}
         

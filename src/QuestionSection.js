@@ -13,7 +13,10 @@ export default class QuestionSection extends React.Component {
                 <Guess submitGuess={this.props.submitGuess}/>
             </div>
             : <div className='questionsection'>
-                <AlienSelect et={this.props.et} setEt={this.props.setEt}/>
+                <AlienSelect 
+                et={this.props.et} 
+                setEt={this.props.setEt}
+                result={this.props.result}/>
                 {this.props.modals.any ? 
                 <Modal modals={this.props.modals} 
                 submitEyes={this.props.submitEyes}
