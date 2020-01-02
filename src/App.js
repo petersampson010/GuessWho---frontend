@@ -35,7 +35,8 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchAliens()
+    this.fetchAliens();
+    this.setState({computer: null})
   }
 
   setEt = () => {
