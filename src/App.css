@@ -1,20 +1,4 @@
-.guess {
-  width: 100%;
-  height: 100%;
-  background-color: black;
-}
 
-.menubar {
-  height: 100%;
-  width: 130px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: blue;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
 
 .titlebar {
   height: 40px;
@@ -31,44 +15,67 @@
 
 .game {
   position: fixed;
-  top: 90px;
-  left: 150px;
-  right: 30px;
-  bottom: 30px;
+  top: 40px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
   background-color: brown;
 }
 
 .compside {
   position: fixed;
-  top: 80px;
-  left: 170px;
-  right: 60px;
-  bottom: 680px;
-  background-color: yellow;
-  text-align: center;
+  top: 550px;
+  left: 20px;
+  right: 1200px;
+  bottom: 20px;
 }
 
 .usersside {
   position: fixed;
-  top: 140px;
-  left: 170px;
-  right: 60px;
-  bottom: 210px;
+  top: 65px;
+  left: 120px;
+  right: 120px;
+  bottom: 248px;
   background-color:green ;
 }
 
 .questionsection {
   position: fixed;
   top: 600px;
-  left: 270px;
-  right: 160px;
+  left: 570px;
+  right: 20px;
   bottom: 20px;
   background-color: grey;
 }
 
+.image {
+  float: left;
+  padding: 5px;
+  width: 11.66%;
+  height: 148px;
+}
+
+.myGif {
+  width: 440px;
+}
+
+.yesGif {
+  width: 350px;
+}
+
+.questions {
+  position: fixed;
+  left: 830px;
+  right: 165px;
+}
+
+.questionbutton {
+  float: left;
+}
+
 .selectalien {
   position: fixed;
-  left: 275px;
+  left: 575px;
   right: 525px;
 }
 
@@ -137,22 +144,8 @@
   100% { background-position: 0 0; }
 }
 
-.questions {
-  position: fixed;
-  left: 530px;
-  right: 165px;
-}
 
-.questionbutton {
-  float: left;
-}
 
-.image {
-  float: left;
-  padding: 5px;
-  width: 11.5%;
-  height: 135px;
-}
 
 .modal-header {
   padding: 2px 16px;
@@ -181,7 +174,7 @@
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
 }
-
+/* 
 .guessbackdrop {
   position: fixed;
   top: 0;
@@ -189,7 +182,7 @@
   width: 100%;
   height: 100%;
   background-color: black;
-}
+} */
 
 
 

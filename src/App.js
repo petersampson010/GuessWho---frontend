@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import MenuBar from './MenuBar'
 import TitleBar from './TitleBar'
 import Game from './Game'
 import QuestionSection from './QuestionSection'
+
 
 export default class App extends React.Component {
 
@@ -22,7 +22,7 @@ export default class App extends React.Component {
       nose: false,
       eyebrows: false
     },
-    computer: "nothing",
+    computer: null,
     guess: false,
     userguess: null,
     result: ""
@@ -57,6 +57,7 @@ export default class App extends React.Component {
     });
     this.state.et.colour === selectedColour ? this.setState({computer: "YES"}) : this.setState({computer: "NO"})
   }
+  
   submitEyes = event => {
     event.preventDefault();
     const selectedEyes = event.target.eyes.value
@@ -91,7 +92,6 @@ export default class App extends React.Component {
     return (
       <div className="App">
           <TitleBar />
-          <MenuBar />
           <Game 
           computer={this.state.computer} 
           aliens={this.state.aliens}
