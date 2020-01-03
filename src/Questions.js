@@ -5,7 +5,7 @@ export default class Questions extends React.Component {
 
     render() {
         return (
-            <div className='questions'>
+            <div style={this.props.et === null ? {display: "none"} : null} className='questions'>
                 SELECT A CATEGORY FOR YOUR QUESTION
                 <br></br>
                 <button onClick={(e) => this.props.attributeClick("colour")}>COLOUR</button>
