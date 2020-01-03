@@ -8,7 +8,7 @@ export default class EndResponse extends React.Component {
 
     render() {
         return (
-            this.props.image === "Y" ? <img src={congrats} /> : <img src={nope}/>
+            this.props.image === "Y" ? <img className="leo" src={congrats} /> : <img className="noGif" src={nope}/>
         )
     }
 }
