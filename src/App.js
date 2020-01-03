@@ -88,8 +88,8 @@ export default class App extends React.Component {
     event.preventDefault();
     this.setState({guess: false, userguess: event.target.userguess.value});
     this.state.et.name.toLowerCase() == event.target.userguess.value.toLowerCase() ? 
-    this.setState({result: "CONGRATULATIONS"})
-    : this.setState({result: "NOPE, TRY AGAIN!"})
+    this.setState({result: "Y"})
+    : this.setState({result: "N"})
   }
 
   render() {
@@ -120,6 +120,7 @@ export default class App extends React.Component {
     )
   }
 }
+
   
 
 
