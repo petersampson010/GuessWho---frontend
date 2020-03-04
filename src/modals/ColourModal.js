@@ -6,7 +6,7 @@ export default class ColourModal extends React.Component {
     render() {
         return (
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
                 <form onSubmit={event => this.props.submitColour(event)}>
                     <p>Are they 
                     <select name="colours" class="modal-body" >
