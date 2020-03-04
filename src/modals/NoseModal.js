@@ -9,7 +9,7 @@ export default class NoseModal extends React.Component {
             <div class="modal-header">
                 <form onSubmit={event => this.props.submitQuestion(event, "nose")}>
                     <p>Do they have a Nose?</p>
-                    <button type="submit">ASK!</button>
+                    <button class="modal-body" type="submit">ASK!</button>
                 </form>
             </div>   
         </div>

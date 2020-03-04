@@ -9,7 +9,7 @@ export default class HairModal extends React.Component {
             <div class="modal-header">
                 <form onSubmit={event => this.props.submitQuestion(event, "hair")}>
                     <p>Do they have Hair?</p>
-                    <button type="submit">ASK!</button>
+                    <button class="modal-body" type="submit">ASK!</button>
                 </form>
             </div>   
         </div>

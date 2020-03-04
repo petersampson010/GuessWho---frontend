@@ -8,7 +8,7 @@ export default class Guess extends React.Component {
             <div className="modal-content">
                 <div class="modal-header">
                     <form onSubmit={event => this.props.submitGuess(event)}>
-                        <input name="userguess" placeholder="Name your alien here.."></input>
+                        <input class="modal-body" name="userguess" placeholder="Name your alien here.."></input>
                     </form>
                 </div>
             </div>

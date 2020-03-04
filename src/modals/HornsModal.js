@@ -9,7 +9,7 @@ export default class HornsModal extends React.Component {
             <div class="modal-header">
                 <form onSubmit={event => this.props.submitQuestion(event, "horns")}>
                     <p>Do they have Horns?</p>
-                    <button type="submit">ASK!</button>
+                    <button class="modal-body" type="submit">ASK!</button>
                 </form>
             </div>   
         </div>
